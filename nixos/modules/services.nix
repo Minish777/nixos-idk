@@ -22,15 +22,6 @@
     enable = true;
     tunMode.enable = true;
   };
-	# proxy
-services.mtprotoproxy = {
-    enable = true;
-    port = 1443;
-    users = {
-      # Задаем имя пользователя (например, "proxy") и его секретный хекс-ключ
-      proxy = "9cca40f9f9e44e35bb44202aa0e8b812";
-    };
-  };
 	  
 	# cpupower performance
 	powerManagement.cpuFreqGovernor = "performance";
