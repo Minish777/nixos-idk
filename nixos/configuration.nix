@@ -14,6 +14,7 @@
     ./modules/services.nix
     ./modules/fonts.nix
     ./modules/autostart.nix
+    ./modules/nix-ld.nix
   ];
 
   # Загрузчик
@@ -78,6 +79,8 @@
 
   # Разрешаем нераспространяемые пакеты (нужно для драйверов NVIDIA и т.д.)
   nixpkgs.config.allowUnfree = true;
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   system.stateVersion = "26.05";
 }

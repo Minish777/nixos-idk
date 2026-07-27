@@ -5,6 +5,9 @@
     # Актуальный стабильный канал NixOS
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
 
+    # tg-ws-proxy
+    tg-ws-proxy.url = "path:/etc/nixos/flakes/tg-ws-proxy";
+
     # Репозиторий ядра CachyOS
     cachyos = {
       url = "github:xddxdd/nix-cachyos-kernel";
@@ -30,7 +33,7 @@
    		};
   };
 
-  outputs = { self, nixpkgs, cachyos, noctalia, zapret-discord-youtube, zen-browser, spicetify-nix, ... }@inputs: {
+  outputs = { self, nixpkgs, cachyos, noctalia, zapret-discord-youtube, zen-browser, spicetify-nix, tg-ws-proxy,  ... }@inputs: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -40,8 +43,10 @@
           ./modules/zapret.nix
           ./modules/spicetify.nix
           spicetify-nix.nixosModules.spicetify
+          tg-ws-proxy.nixosModules.default
         ];
       };
     };
   };
 }
+

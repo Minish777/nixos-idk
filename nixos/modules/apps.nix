@@ -31,6 +31,8 @@
 	prismlauncher
 	cava
 	unzip
+	nftables
+	iproute2
 	unrar
 	eza
 	bat
