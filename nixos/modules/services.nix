@@ -20,7 +20,11 @@
   # Настройка утилиты Throne (из твоего старого конфига)
   programs.throne = {
     enable = true;
-    tunMode.enable = true;
+    tunMode = {
+		enable = true;
+		setuid = true;
+	};
+		
   };
 	  
 	# cpupower performance
