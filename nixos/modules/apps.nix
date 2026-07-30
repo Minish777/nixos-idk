@@ -12,6 +12,9 @@
   };
 
   environment.systemPackages = with pkgs; [
+    gnome-system-monitor
+    wineWow64Packages.full
+    winetricks
     pywalfox-native
 	bibata-cursors
 	adwaita-icon-theme
@@ -23,7 +26,6 @@
 	fish
 	starship
 	hyprland
-	kitty
 	foot
 	nautilus
 	spotify

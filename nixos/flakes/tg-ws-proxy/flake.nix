@@ -1,17 +1,17 @@
 {
-  description = "TG WS Proxy module";
+  description = "Proxy Suite & Zapret module";
 
   inputs = {
     proxy-suite.url = "github:FUFSoB/proxy-suite-flake";
   };
 
   outputs = { self, proxy-suite, ... }: {
-    nixosModules.default = { pkgs, ... }: {
-      # Подключаем сам модуль proxy-suite
+    nixosModules.default = { config, lib, pkgs, ... }: {
       imports = [ proxy-suite.nixosModules.default ];
 
       services.proxy-suite = {
         enable = true;
+        # perAppRouting.enable = true; # Можно выключить, если больше нигде не используется
 
         tray = {
           enable = true;

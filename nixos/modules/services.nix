@@ -33,4 +33,9 @@
 
   # Включаем поддержку Flatpak на системном уровне
   services.flatpak.enable = true;
+
+  services.journald.extraConfig = ''
+      SystemMaxUse=100M
+      RuntimeMaxUse=50M
+    '';
 }

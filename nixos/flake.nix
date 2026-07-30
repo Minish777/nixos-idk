@@ -30,17 +30,16 @@
         zen-browser = {
           url = "github:0xc000022070/zen-browser-flake";
           inputs.nixpkgs.follows = "nixpkgs";
-   		};
+    		};
   };
 
-  outputs = { self, nixpkgs, cachyos, noctalia, zapret-discord-youtube, zen-browser, spicetify-nix, tg-ws-proxy,  ... }@inputs: {
+  outputs = { self, nixpkgs, cachyos, noctalia, zen-browser, spicetify-nix, tg-ws-proxy, ... }@inputs: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
           ./configuration.nix
-          ./modules/zapret.nix
           ./modules/spicetify.nix
           spicetify-nix.nixosModules.spicetify
           tg-ws-proxy.nixosModules.default

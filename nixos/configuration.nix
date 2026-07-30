@@ -9,9 +9,11 @@
     ./modules/hardware/nvidia.nix
     ./modules/hardware/kernel.nix
     ./modules/environment/hyprland.nix
+    ./modules/environment/dwl/default.nix
     ./modules/environment/noctalia.nix
     ./modules/apps.nix
     ./modules/services.nix
+    ./modules/zapret.nix
     ./modules/fonts.nix
     ./modules/autostart.nix
     ./modules/nix-ld.nix
@@ -45,7 +47,8 @@
     options = "grp:alt_shift_toggle"; # Переключение по Alt + Shift (можешь поменять на "grp:caps_toggle" если хочешь по Caps Lock)
   };
 
-  services.xserver.enable = true;
+  # services.xserver.enable = true;
+    services.displayManager.ly.enable = true;
 
   # gamemode
   programs.gamemode.enable = true;
@@ -81,6 +84,19 @@
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+
+  zramSwap.enable = true;
+
+# Автоматическая сборка мусора (оставляем только последние 3 дня)
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 3d";
+  };
+
+  # Автоматическая оптимизация хранилища (дедупликация)
+  nix.settings.auto-optimise-store = true;
 
   system.stateVersion = "26.05";
 }
