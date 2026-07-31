@@ -9,7 +9,6 @@
     ./modules/hardware/nvidia.nix
     ./modules/hardware/kernel.nix
     ./modules/environment/hyprland.nix
-    ./modules/environment/dwl/default.nix
     ./modules/environment/noctalia.nix
     ./modules/apps.nix
     ./modules/services.nix
