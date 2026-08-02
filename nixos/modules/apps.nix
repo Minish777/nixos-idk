@@ -17,11 +17,13 @@
     winetricks
     pywalfox-native
 	bibata-cursors
+	qbittorrent
 	adwaita-icon-theme
     throne
     micro
 	git
 	curl
+	kitty
 	fastfetch
 	fish
 	starship
