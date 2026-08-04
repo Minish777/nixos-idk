@@ -2,6 +2,7 @@
 
 {
   programs.firefox.enable = true;
+  programs.appimage.enable = true;
 
   programs.obs-studio = {
     enable = true;
@@ -17,6 +18,7 @@
     winetricks
     pywalfox-native
 	bibata-cursors
+	qbittorrent
 	adwaita-icon-theme
     throne
     micro
