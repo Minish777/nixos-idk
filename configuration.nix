@@ -56,7 +56,7 @@
   users.users."steelium" = {
     isNormalUser = true;
     description = "steelium";
-    extraGroups = [ "networkmanager" "wheel" "audio" "video" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "video" "keyring" ];
     shell = pkgs.fish;
     packages = with pkgs; [ ];
   };
