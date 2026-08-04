@@ -2,7 +2,10 @@
 
 {
   programs.firefox.enable = true;
-  programs.appimage.enable = true;
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
 
   programs.obs-studio = {
     enable = true;
