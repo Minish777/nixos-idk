@@ -2,10 +2,13 @@
 
 {
   programs.firefox.enable = true;
-  programs.appimage = {
-    enable = true;
-    binfmt = true;
+programs.appimage = {
+  enable = true;
+  binfmt = true;
+  package = pkgs.appimage-run.override {
+    extraPkgs = pkgs: [ pkgs.icu ];
   };
+};
 
   programs.obs-studio = {
     enable = true;
