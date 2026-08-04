@@ -34,7 +34,6 @@ programs.appimage = {
 	fastfetch
 	fish
 	starship
-	hyprland
 	foot
 	nautilus
 	spotify

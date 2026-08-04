@@ -2,8 +2,8 @@
   description = "Steelium NixOS Flake Configuration";
 
   inputs = {
-    # Актуальный стабильный канал NixOS
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
+    # Актуальный нестабильный канал NixOS
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # tg-ws-proxy
     tg-ws-proxy.url = "path:/etc/nixos/flakes/tg-ws-proxy";

@@ -5,6 +5,9 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+    package = pkgs.hyprland.overrideAttrs (old: {
+      buildInputs = (old.buildInputs or [ ]) ++ [ pkgs.glaze ];
+    });
   };
 
   # Обязательные переменные окружения для корректной работы Hyprland на NVIDIA
