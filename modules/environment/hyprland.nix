@@ -41,5 +41,8 @@
     WLR_NO_HARDWARE_CURSORS = "1"; # Отключает аппаратные курсоры (спасает от артефактов на NVIDIA)
     XCURSOR_THEME = "Bibata-Modern-Classic";
     XCURSOR_SIZE = "24";
+    # Electron-приложения (Discord/GoofCord и др.) в нативный Wayland:
+    # иначе шаринг экрана через портал не работает (только XWayland-окна)
+    NIXOS_OZONE_WL = "1";
   };
 }
