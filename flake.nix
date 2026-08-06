@@ -25,6 +25,9 @@
 
     # spicetify
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
+    # lyricspot
+    lyricspot.url = "path:/etc/nixos/flakes/lyricspot";
     
     # Zen Browser флок
         zen-browser = {
@@ -33,7 +36,7 @@
     		};
   };
 
-  outputs = { self, nixpkgs, cachyos, noctalia, zen-browser, spicetify-nix, tg-ws-proxy, ... }@inputs: {
+  outputs = { self, nixpkgs, cachyos, noctalia, zen-browser, spicetify-nix, tg-ws-proxy, lyricspot, ... }@inputs: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -43,6 +46,7 @@
           ./modules/spicetify.nix
           spicetify-nix.nixosModules.spicetify
           tg-ws-proxy.nixosModules.default
+          lyricspot.nixosModules.default
         ];
       };
     };
