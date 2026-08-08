@@ -52,6 +52,7 @@ programs.appimage = {
 	materialgram
 	protonplus
 	ffmpeg
+	vlc
 	inputs.zen-browser.packages."${pkgs.system}".default
   ];
 }
