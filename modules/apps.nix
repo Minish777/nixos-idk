@@ -41,6 +41,7 @@ programs.appimage = {
 	goofcord
 	prismlauncher
 	cava
+	blockbench
 	unzip
 	nftables
 	iproute2
