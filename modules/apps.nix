@@ -23,6 +23,7 @@ programs.appimage = {
     wineWow64Packages.full
     winetricks
     pywalfox-native
+    equibop
 	bibata-cursors
 	qbittorrent
 	adwaita-icon-theme
