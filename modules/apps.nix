@@ -29,6 +29,7 @@ programs.appimage = {
 	adwaita-icon-theme
     throne
     micro
+    lavat
 	git
 	yazi
 	feh
