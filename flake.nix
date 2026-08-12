@@ -20,6 +20,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Вейланд-композитор mangowm
+    mangowm = {
+      url = "github:mangowm/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Добавлен zapret для Discord и YouTube
     zapret-discord-youtube.url = "github:kartavkun/zapret-discord-youtube";
 

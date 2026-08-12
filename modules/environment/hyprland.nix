@@ -1,6 +1,10 @@
-{ pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
-{
+let
+  # gtk-портал уже добавляет модуль mango (см. programs/mango.nix),
+  # чтобы не дублировать пакет и не падать на "File exists"
+  mangoEnabled = config.programs.mango.enable or false;
+in {
   # Включаем сам Hyprland на уровне NixOS и активируем Xwayland
   programs.hyprland = {
     enable = true;
@@ -12,11 +16,12 @@
 
   # Порталы: нужны для шаринга экрана в Discord и других приложениях.
   # Модуль programs.hyprland уже сам добавляет xdg-desktop-portal-hyprland
-  # в extraPortals, поэтому здесь только gtk (иначе пакет дублируется
-  # и падает сборка: "xdg-desktop-portal-hyprland.service: File exists")
+  # в extraPortals. gtk добавляем только если mango выключен — иначе пакет
+  # дублируется с modules/environment/mango.nix и падает сборка
+  # ("xdg-desktop-portal-gtk.service: File exists").
   xdg.portal = {
     enable = true;
-    extraPortals = [
+    extraPortals = lib.mkIf (!mangoEnabled) [
       pkgs.xdg-desktop-portal-gtk
     ];
   };
@@ -31,9 +36,10 @@
     after = [ "graphical-session.target" ];
   };
 
-  # Обязательные переменные окружения для корректной работы Hyprland на NVIDIA
+  # Обязательные переменные окружения для корректной работы Hyprland на NVIDIA.
+  # XDG_CURRENT_DESKTOP не задаём глобально — Hyprland ставит его сам
+  # (а глобальный "Hyprland" сломал бы выбор портала в сессии mango).
   environment.sessionVariables = {
-    XDG_CURRENT_DESKTOP = "Hyprland";
     LIBVA_DRIVER_NAME = "nvidia";
     XDG_SESSION_TYPE = "wayland";
     GBM_BACKEND = "nvidia-drm";
