@@ -34,7 +34,6 @@ programs.appimage = {
 	kitty
 	fastfetch
 	fish
-	warp-terminal
 	starship
 	foot
 	nautilus
