@@ -30,6 +30,8 @@ programs.appimage = {
     throne
     micro
 	git
+	yazi
+	feh
 	curl
 	kitty
 	fastfetch
