@@ -27,6 +27,7 @@ programs.appimage = {
 	bibata-cursors
 	qbittorrent
 	adwaita-icon-theme
+	android-tools
     throne
     micro
     lavat

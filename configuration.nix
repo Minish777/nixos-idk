@@ -21,7 +21,7 @@
 
   # Загрузчик
   boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sdb";
+  boot.loader.grub.device = "/dev/disk/by-id/ata-KINGSTON_SA400S37240G_50026B77845DC4D0";
   boot.loader.grub.useOSProber = true;
 
   networking.hostName = "nixos";
