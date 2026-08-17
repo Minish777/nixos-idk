@@ -26,6 +26,7 @@ programs.appimage = {
     equibop
 	bibata-cursors
 	qbittorrent
+	openshot-qt
 	adwaita-icon-theme
 	android-tools
     throne
