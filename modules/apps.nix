@@ -24,6 +24,7 @@ programs.appimage = {
     winetricks
     pywalfox-native
     equibop
+    davinci-resolve
 	bibata-cursors
 	qbittorrent
 	openshot-qt
