@@ -5,7 +5,7 @@
 
   services.zapret-discord-youtube = {
     enable = true;
-    configName = "general(ALT11)";
+    configName = "general(ALT)";
     gameFilter = "null";
   };
 }
