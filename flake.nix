@@ -26,8 +26,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Добавлен zapret для Discord и YouTube
-    zapret-discord-youtube.url = "github:kartavkun/zapret-discord-youtube";
+    # zapret2 для обхода DPI (Discord + YouTube)
+    # Используем zapret2 из nixpkgs, свой модуль в modules/zapret2.nix
 
     # spicetify
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";

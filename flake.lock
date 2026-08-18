@@ -141,11 +141,11 @@
         "scenefx": "scenefx"
       },
       "locked": {
-        "lastModified": 1787027812,
-        "narHash": "sha256-yWmMXRs9l8S/D68djhT207oKTrc9KR5fBWsxoPxyiZ0=",
+        "lastModified": 1787053959,
+        "narHash": "sha256-0gJJm6SqT1ai0UDptq3Ss8N5KVtfnuMLu2TwIdYVs08=",
         "owner": "mangowm",
         "repo": "mango",
-        "rev": "6cf03353ab07cad4306c2cc10b9063161717a6f3",
+        "rev": "a39272407b5138d1c4d45f87cc0ce64a3120a954",
         "type": "github"
       },
       "original": {
@@ -202,11 +202,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1786862985,
-        "narHash": "sha256-FBJRXmbGXiSUDvYEbfLYRkckayyZ6SK1UEqhCrIZ2Cs=",
+        "lastModified": 1787001381,
+        "narHash": "sha256-Ue1Yo8gfHdD4TMtNewhA4tkSYeFqXThju0nCyJc3ALo=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "e5bdc4a41d4c072fe1e3787eaa0320a384741d44",
+        "rev": "ec2d622de0773551768cf98f3fc50cbcc003b9c5",
         "type": "github"
       },
       "original": {
@@ -245,22 +245,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_5": {
-      "locked": {
-        "lastModified": 1786862985,
-        "narHash": "sha256-FBJRXmbGXiSUDvYEbfLYRkckayyZ6SK1UEqhCrIZ2Cs=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "e5bdc4a41d4c072fe1e3787eaa0320a384741d44",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "noctalia": {
       "inputs": {
         "nixpkgs": [
@@ -268,11 +252,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787021519,
-        "narHash": "sha256-OtaVtZZgyeRKzgqkk/js06EglglHCPMA4xyryp7eYzk=",
+        "lastModified": 1787057658,
+        "narHash": "sha256-a9OoMe12C+kCTP3t5rSPbKkL8fqIl3Y70A7KSVpn6fA=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "b5c1bfaace0c3b1b36f227970e389f9d20295937",
+        "rev": "4742eeb218e255ce03be7dcf0a67f2ba001e8be1",
         "type": "github"
       },
       "original": {
@@ -309,7 +293,6 @@
         "noctalia": "noctalia",
         "spicetify-nix": "spicetify-nix",
         "tg-ws-proxy": "tg-ws-proxy",
-        "zapret-discord-youtube": "zapret-discord-youtube",
         "zen-browser": "zen-browser"
       }
     },
@@ -423,42 +406,7 @@
         "type": "github"
       }
     },
-    "zapret-discord-youtube": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_5",
-        "zapret-flowseal": "zapret-flowseal_2"
-      },
-      "locked": {
-        "lastModified": 1786907827,
-        "narHash": "sha256-FFWwH9QxoPGyMNJvjqPoFlB10pUtQhKkWxNiJWb+gt4=",
-        "owner": "kartavkun",
-        "repo": "zapret-discord-youtube",
-        "rev": "3b99a88a3a199a118558f6063288a01693e48ee7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "kartavkun",
-        "repo": "zapret-discord-youtube",
-        "type": "github"
-      }
-    },
     "zapret-flowseal": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1786894729,
-        "narHash": "sha256-v1A9eiapP3wCfQS33ZBKD7oP3GGqIpSc9yF11VYpexI=",
-        "owner": "Flowseal",
-        "repo": "zapret-discord-youtube",
-        "rev": "1112e479e5a4a669fc3fabfcdbba8b2443cfdcf6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Flowseal",
-        "repo": "zapret-discord-youtube",
-        "type": "github"
-      }
-    },
-    "zapret-flowseal_2": {
       "flake": false,
       "locked": {
         "lastModified": 1786894729,

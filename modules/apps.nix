@@ -23,6 +23,7 @@ programs.appimage = {
     wineWow64Packages.full
     winetricks
     pywalfox-native
+    ghostty
     equibop
     davinci-resolve
 	bibata-cursors
