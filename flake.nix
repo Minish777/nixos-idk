@@ -20,12 +20,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Вейланд-композитор mangowm
-    mangowm = {
-      url = "github:mangowm/mango";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # spicetify
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
