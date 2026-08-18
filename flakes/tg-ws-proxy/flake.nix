@@ -11,7 +11,12 @@
 
       services.proxy-suite = {
         enable = true;
-        # perAppRouting.enable = true; # Можно выключить, если больше нигде не используется
+        perAppRouting.enable = true; # Можно выключить, если больше нигде не используется
+
+        zapret = {
+          enable = true;
+          perApp.enable = true;
+        };
 
         tray = {
           enable = true;

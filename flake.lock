@@ -373,8 +373,8 @@
         "proxy-suite": "proxy-suite"
       },
       "locked": {
-        "lastModified": 1785664657,
-        "narHash": "sha256-39ZFEDWrhXQ9OJ0eJjWStEyEJk/zN8R6WNJiYeWEs00=",
+        "lastModified": 1787073692,
+        "narHash": "sha256-loQxzwz45FXuUQnUcwCpEtSGQlnj+RDdBzK+p7MRwHI=",
         "path": "/etc/nixos/flakes/tg-ws-proxy",
         "type": "path"
       },
