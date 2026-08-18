@@ -13,7 +13,10 @@
     ./modules/environment/noctalia.nix
     ./modules/apps.nix
     ./modules/services.nix
-    { services.zapret-discord-youtube.enable = true; }
+    { services.zapret-discord-youtube = {
+      enable = true;
+      strategy = "general_alt5.bat";
+    }; }
     ./modules/fonts.nix
     ./modules/autostart.nix
     ./modules/nix-ld.nix
