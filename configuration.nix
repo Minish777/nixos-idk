@@ -13,7 +13,7 @@
     ./modules/environment/noctalia.nix
     ./modules/apps.nix
     ./modules/services.nix
-    ./modules/zapret2.nix
+    { services.zapret-discord-youtube.enable = true; }
     ./modules/fonts.nix
     ./modules/autostart.nix
     ./modules/nix-ld.nix

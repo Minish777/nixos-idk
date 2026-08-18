@@ -26,8 +26,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # zapret2 для обхода DPI (Discord + YouTube)
-    # Используем zapret2 из nixpkgs, свой модуль в modules/zapret2.nix
+    # zapret-discord-youtube-linux для обхода DPI (Discord + YouTube)
+    zapret-dy = {
+      url = "git+https://codeberg.org/VOXEL0798/zapret-discord-youtube-nix.flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # spicetify
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
@@ -42,7 +45,7 @@
     		};
   };
 
-  outputs = { self, nixpkgs, cachyos, noctalia, zen-browser, spicetify-nix, tg-ws-proxy, lyricspot, ... }@inputs: {
+  outputs = { self, nixpkgs, cachyos, noctalia, zen-browser, spicetify-nix, tg-ws-proxy, lyricspot, zapret-dy, ... }@inputs: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -53,6 +56,7 @@
           spicetify-nix.nixosModules.spicetify
           tg-ws-proxy.nixosModules.default
           lyricspot.nixosModules.default
+          zapret-dy.nixosModules.default
         ];
       };
     };

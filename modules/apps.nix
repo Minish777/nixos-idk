@@ -23,9 +23,10 @@ programs.appimage = {
     wineWow64Packages.full
     winetricks
     pywalfox-native
-    ghostty
     equibop
     davinci-resolve
+    rio
+    alacritty
 	bibata-cursors
 	qbittorrent
 	openshot-qt
