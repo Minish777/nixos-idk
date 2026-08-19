@@ -60,14 +60,6 @@
     packages = with pkgs; [ ];
   };
 
-	 
-	  #steam
-	  programs.steam = {
-	    enable = true;
-	    remotePlay.openFirewall = false;
-	    dedicatedServer.openFirewall = false; 
-	  };
-
 	  # HDD
 		fileSystems."/home/steelium/Games" = {
     device = "/dev/disk/by-uuid/99508f19-4d8a-4875-877a-7e0cd0f59cdd";

@@ -1,10 +1,6 @@
 { config, pkgs, lib, ... }:
 
-let
-  # gtk-портал уже добавляет модуль mango (см. programs/mango.nix),
-  # чтобы не дублировать пакет и не падать на "File exists"
-  mangoEnabled = config.programs.mango.enable or false;
-in {
+{
   # Включаем сам Hyprland на уровне NixOS и активируем Xwayland
   programs.hyprland = {
     enable = true;
@@ -15,20 +11,14 @@ in {
   };
 
   # Порталы: нужны для шаринга экрана в Discord и других приложениях.
-  # Модуль programs.hyprland уже сам добавляет xdg-desktop-portal-hyprland
-  # в extraPortals. gtk добавляем только если mango выключен — иначе пакет
-  # дублируется с modules/environment/mango.nix и падает сборка
-  # ("xdg-desktop-portal-gtk.service: File exists").
   xdg.portal = {
     enable = true;
-    extraPortals = lib.mkIf (!mangoEnabled) [
+    extraPortals = [
       pkgs.xdg-desktop-portal-gtk
     ];
   };
 
-  # xdg-desktop-portal.service не стартует, пока не активен graphical-session.target,
-  # а тот запрещает ручной запуск. Стартуем его через обёртку из autostart.lua:
-  #   systemctl --user start hyprland-session.target
+  # xdg-desktop-portal.service не стартует, пока не активен graphical-session.target
   systemd.user.targets.hyprland-session = {
     description = "Hyprland session target";
     bindsTo = [ "graphical-session.target" ];
@@ -37,18 +27,14 @@ in {
   };
 
   # Обязательные переменные окружения для корректной работы Hyprland на NVIDIA.
-  # XDG_CURRENT_DESKTOP не задаём глобально — Hyprland ставит его сам
-  # (а глобальный "Hyprland" сломал бы выбор портала в сессии mango).
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "nvidia";
     XDG_SESSION_TYPE = "wayland";
     GBM_BACKEND = "nvidia-drm";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    WLR_NO_HARDWARE_CURSORS = "1"; # Отключает аппаратные курсоры (спасает от артефактов на NVIDIA)
+    WLR_NO_HARDWARE_CURSORS = "1";
     XCURSOR_THEME = "Bibata-Modern-Classic";
     XCURSOR_SIZE = "24";
-    # Electron-приложения (Discord/GoofCord и др.) в нативный Wayland:
-    # иначе шаринг экрана через портал не работает (только XWayland-окна)
     NIXOS_OZONE_WL = "1";
   };
 }

@@ -2,6 +2,15 @@
 
 {
   programs.firefox.enable = true;
+
+  # steam
+  programs.steam = {
+  	enable = true;
+  	package = pkgs.millennium-steam;
+  	remotePlay.openFirewall = false;
+  	dedicatedServer.openFirewall = false;
+  };
+  
 programs.appimage = {
   enable = true;
   binfmt = true;
@@ -64,4 +73,6 @@ programs.appimage = {
 	vlc
     inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
   ];
+
+  nixpkgs.overlays = [ inputs.millennium.overlays.default ];
 }

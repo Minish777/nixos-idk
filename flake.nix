@@ -14,6 +14,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # millennium
+    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+
     # Шелл Noctalia (без указания несуществующих веток/тегов)
     noctalia = {
       url = "github:noctalia-dev/noctalia";
