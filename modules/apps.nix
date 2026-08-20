@@ -35,6 +35,7 @@ programs.appimage = {
     equibop
     davinci-resolve
     rio
+    equibop
     alacritty
 	bibata-cursors
 	qbittorrent

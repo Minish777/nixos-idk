@@ -15,6 +15,7 @@
     ./modules/fonts.nix
     ./modules/autostart.nix
     ./modules/nix-ld.nix
+    ./modules/useflags.nix
   ];
 
   # Загрузчик
