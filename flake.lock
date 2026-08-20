@@ -312,8 +312,8 @@
         "proxy-suite": "proxy-suite"
       },
       "locked": {
-        "lastModified": 1787073692,
-        "narHash": "sha256-loQxzwz45FXuUQnUcwCpEtSGQlnj+RDdBzK+p7MRwHI=",
+        "lastModified": 1787268198,
+        "narHash": "sha256-azFsiD2mW/bd94lgAS9y1In+ehLmLxhSjtySBH7C7A4=",
         "path": "/etc/nixos/flakes/tg-ws-proxy",
         "type": "path"
       },
@@ -369,11 +369,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787197732,
-        "narHash": "sha256-rxqzRhFq8Gpem967K+jGkw4kfm1ZN9bsNzaujG4Z6wc=",
+        "lastModified": 1787264895,
+        "narHash": "sha256-aj43Fhlstf8zrkQ/zPRxGCVtyb/lrEcBdUCCZ4UTZ18=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "dc0baff0a6041483be3816cf2e12ae053b5e458a",
+        "rev": "09ea94b39f36fbee3361aaf47c2d8f3e4e123eaa",
         "type": "github"
       },
       "original": {
