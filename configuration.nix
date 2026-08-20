@@ -13,7 +13,6 @@
     ./modules/apps.nix
     ./modules/services.nix
     ./modules/fonts.nix
-    ./modules/autostart.nix
     ./modules/nix-ld.nix
     ./modules/useflags.nix
   ];
@@ -74,20 +73,8 @@
   # Разрешаем нераспространяемые пакеты (нужно для драйверов NVIDIA и т.д.)
   nixpkgs.config.allowUnfree = true;
 
-  # Hyprland 0.56.x требует glaze 7...<8, а в unstable уже 8.0.0 — пиним 7.9.1
-  nixpkgs.overlays = [
-    (final: prev: {
-      glaze = prev.glaze.overrideAttrs (old: {
-        version = "7.9.1";
-        src = prev.fetchFromGitHub {
-          owner = "stephenberry";
-          repo = "glaze";
-          tag = "v7.9.1";
-          hash = "sha256-NRRq5MGF2f5PW0teYnq58ELzson+U6KHVPaY6r30KLA=";
-        };
-      });
-    })
-  ];
+  # Прошивки устройств + микрокод CPU (важно для стабильности)
+  hardware.enableRedistributableFirmware = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

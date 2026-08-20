@@ -5,9 +5,6 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    package = pkgs.hyprland.overrideAttrs (old: {
-      buildInputs = (old.buildInputs or [ ]) ++ [ pkgs.glaze ];
-    });
   };
 
   # Порталы: нужны для шаринга экрана в Discord и других приложениях.
@@ -32,7 +29,6 @@
     XDG_SESSION_TYPE = "wayland";
     GBM_BACKEND = "nvidia-drm";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    WLR_NO_HARDWARE_CURSORS = "1";
     XCURSOR_THEME = "Bibata-Modern-Classic";
     XCURSOR_SIZE = "24";
     NIXOS_OZONE_WL = "1";

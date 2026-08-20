@@ -19,13 +19,7 @@ programs.appimage = {
   };
 };
 
-  programs.obs-studio = {
-    enable = true;
-  
-    package = pkgs.obs-studio.override {
-      cudaSupport = true;
-    };
-  };
+  programs.obs-studio.enable = true;
 
   environment.systemPackages = with pkgs; [
     gnome-system-monitor
@@ -34,9 +28,6 @@ programs.appimage = {
     pywalfox-native
     equibop
     davinci-resolve
-    rio
-    equibop
-    alacritty
 	bibata-cursors
 	qbittorrent
 	openshot-qt
@@ -49,9 +40,7 @@ programs.appimage = {
 	yazi
 	feh
 	curl
-	kitty
 	fastfetch
-	fish
 	starship
 	foot
 	nautilus

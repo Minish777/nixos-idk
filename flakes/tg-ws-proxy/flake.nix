@@ -26,7 +26,8 @@
         tgWsProxy = {
           enable = true;
           port = 1443;
-          secret = "be92900c81afe6a83aa2285c2d0ec1b3";
+          # Секрет лежит вне git: /etc/nixos/secrets/ (в .gitignore)
+          secretFile = "/etc/nixos/secrets/tg-ws-proxy-secret";
         };
       };
     };

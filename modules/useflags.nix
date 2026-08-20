@@ -5,11 +5,10 @@
 # ║  Xeon E5-2680 v4 (x86-64-v3) · 32GB · GTX 1050               ║
 # ╚══════════════════════════════════════════════════════════════════╝
 {
-
   # ── Сборка: все 28 потоков Xeon ─────────────────────────────────
   nix.settings = {
-    max-jobs = 6;   # 6 параллельных сборок
-    cores = 4;      # по 4 ядра на каждую
+    max-jobs = 7;   # 7 параллельных сборок
+    cores = 4;      # по 4 потока на каждую (7 × 4 = 28)
   };
 
   # ── sysctl: тюнинг ядра под железо ─────────────────────────────
@@ -22,24 +21,16 @@
     "net.core.rmem_max" = 16777216;
     "net.core.wmem_max" = 16777216;
 
-    # Память
-    "vm.swappiness" = 10;
+    # Память: свопимся в zram охотно (он в разы быстрее дискового swap)
+    "vm.swappiness" = 150;
+    "vm.watermark_boost_factor" = 0;
+    "vm.watermark_scale_factor" = 125;
     "vm.dirty_ratio" = 15;
     "vm.dirty_background_ratio" = 5;
     "vm.vfs_cache_pressure" = 50;
 
-    # Планировщик (нижет input lag)
-    "kernel.sched_autogroup_enabled" = 0;
-
     # Файловая система
     "fs.inotify.max_user_watches" = 524288;
     "fs.file-max" = 2097152;
-  };
-
-  # ── Compiler flags для локальной сборки (nix-shell) ─────────────
-  environment.sessionVariables = {
-    NIX_CFLAGS_COMPILE = "-march=x86-64-v3 -O2 -pipe";
-    NIX_LDFLAGS = "-Wl,-O1 -Wl,--as-needed";
-    MAKEFLAGS = "-j28";
   };
 }

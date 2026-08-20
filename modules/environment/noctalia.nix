@@ -1,8 +1,7 @@
 { pkgs, inputs, ... }:
 
 {
-  # Системные службы, необходимые для виджетов Noctalia (сеть, звук, Bluetooth, питание)
-  networking.networkmanager.enable = true;
+  # Системные службы, необходимые для виджетов Noctalia (звук, Bluetooth, питание)
   hardware.bluetooth.enable = true;
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;

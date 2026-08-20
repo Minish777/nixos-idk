@@ -28,9 +28,6 @@
 		
   };
 	  
-	# cpupower performance
-	powerManagement.cpuFreqGovernor = "performance";
-
 	# gnome keyring
 	services.gnome.gnome-keyring.enable = true;
 
