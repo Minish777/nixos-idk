@@ -19,7 +19,17 @@ programs.appimage = {
   };
 };
 
-  programs.obs-studio.enable = true;
+  programs.obs-studio = {
+    enable = true;
+    package = pkgs.obs-studio.override { cudaSupport = true; };
+    plugins = with pkgs.obs-studio-plugins; [
+      wlrobs
+      obs-backgroundremoval
+      obs-pipewire-audio-capture
+      obs-gstreamer
+      obs-vkcapture
+    ];
+  };
 
   environment.systemPackages = with pkgs; [
     gnome-system-monitor
@@ -27,13 +37,13 @@ programs.appimage = {
     winetricks
     pywalfox-native
     equibop
-    davinci-resolve
 	bibata-cursors
 	qbittorrent
 	openshot-qt
 	adwaita-icon-theme
 	android-tools
     throne
+    kitty
     micro
     lavat
 	git
@@ -42,6 +52,7 @@ programs.appimage = {
 	curl
 	fastfetch
 	starship
+	ghostty
 	foot
 	nautilus
 	spotify

@@ -10,6 +10,7 @@
     ./modules/hardware/kernel.nix
     ./modules/environment/hyprland.nix
     ./modules/environment/noctalia.nix
+    ./modules/environment/minimal
     ./modules/apps.nix
     ./modules/services.nix
     ./modules/fonts.nix
@@ -18,9 +19,8 @@
   ];
 
   # Загрузчик
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/disk/by-id/ata-KINGSTON_SA400S37240G_50026B77845DC4D0";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos";
 
